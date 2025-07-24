@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>專業版 DISC 適性測驗 - 個人化報告</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div id="container">
+    <h1>專業版 DISC 適性測驗</h1>
+    <p class="intro">
+        本測驗旨在幫助您深入了解自己的行為風格與特質。測驗共有 40 題，請在每一組描述中，分別選出一個「最像你」的描述和一個「最不像你」的描述。
+    </p>
+    <div id="validation-message" class="warning" style="display: none;"></div>
+
+    <fieldset id="personal-info">
+        <legend>個人基本資料</legend>
+        <div class="info-grid">
+            <div class="info-field">
+                <label for="name">姓名</label>
+                <input type="text" id="name" name="name" placeholder="請輸入您的姓名" required>
+            </div>
+            <div class="info-field">
+                <label>性別</label>
+                <div class="gender-options">
+                    <input type="radio" id="male" name="gender" value="男性">
+                    <label for="male">男性</label>
+                    <input type="radio" id="female" name="gender" value="女性">
+                    <label for="female">女性</label>
+                    <input type="radio" id="other" name="gender" value="其他">
+                    <label for="other">其他</label>
+                </div>
+            </div>
+            <div class="info-field">
+                <label for="birth-date">出生日期</label>
+                <input type="date" id="birth-date" name="birth-date" required>
+            </div>
+            <div class="info-field">
+                <label for="test-date">測驗日期</label>
+                <input type="date" id="test-date" name="test-date" readonly>
+            </div>
+        </div>
+    </fieldset>
+
+    <form id="disc-form">
+        </form>
+
+    <button id="submit-btn">完成測驗，查看分析報告</button>
+
+    <div id="results">
+        <h2>您的個人化分析報告</h2>
+        
+        <div id="report-header">
+            <p><strong>受測者：</strong><span id="report-name"></span></p>
+            <p><strong>測驗日期：</strong><span id="report-date"></span></p>
+        </div>
+
+        <div id="chart-container">
+            <canvas id="disc-radar-chart"></canvas>
+        </div>
+        
+        <div class="analysis-section">
+            <h3 id="result-title"></h3>
+            <p id="result-description"></p>
+        </div>
+
+        <div class="analysis-section">
+            <h3>工作風格與優勢</h3>
+            <ul id="result-strengths"></ul>
+        </div>
+
+        <div class="analysis-section">
+            <h3>潛在挑戰與壓力來源</h3>
+            <ul id="result-challenges"></ul>
+        </div>
+
+        <div class="analysis-section">
+            <h3>壓力下的可能反應</h3>
+            <p id="result-pressure"></p>
+        </div>
+    </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
